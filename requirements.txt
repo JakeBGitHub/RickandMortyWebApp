@@ -5,7 +5,7 @@ cluster==1.4.1.post2
 Flask==1.1.1
 gunicorn==20.0.4
 ndg-httpsclient==0.4.2
-requests==2.9.1
+requests==2.20.0
 ssh-import-id==5.5
 ufw==0.35
 urllib3==1.13.1
