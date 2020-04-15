@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Search Character</title>
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
+body, html {
+  height: 100%;
+  color: #1;
+  line-height: 1.8;
+}
+
+/* Create a Parallax Effect */
+.bgimg-1, .bgimg-2, .bgimg-3 {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* First image (Logo. Full height) */
+.bgimg-1 {);
+  min-height: 100%;
+}
+.w3-wide {letter-spacing: 10px;}
+.w3-hover-opacity {cursor: pointer;}
+
+/* Turn off parallax scrolling for tablets and phones */
+@media only screen and (max-device-width: 1600px) {
+  .bgimg-1, .bgimg-2, .bgimg-3 {
+    background-attachment: scroll;
+    min-height: 20px;
+  }
+}
+</style>
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar" id="myNavbar">
+    <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <a href="/home" class="w3-bar-item w3-button"><i class="fa fa-home"></i>HOME</a>
+    <a href="character_catalogue" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-address-book-o"></i>CHARACTER CATALOGUE</a>
+    <a href="/search" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-search"></i>SEARCH CHARACTER</a>
+    <a href="/compare" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-random"></i>COMPARE CHARACTERS</a>
+    <a href="/test_your_knowledge" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-lightbulb-o"></i>TEST YOUR KNOWLEDGE</a>
+    <a href="/" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-group"></i>JOIN THE COMMUNITY</a>
+    </a>
+  </div>
+
+  <!-- Navbar on small screens -->
+  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
+    <a href="/home" class="w3-bar-item w3-button" onclick="toggleFunction()">HOME</a>
+    <a href="character_catalogue" class="w3-bar-item w3-button" onclick="toggleFunction()">CHARACTER CATALOGUE</a>
+    <a href="/search" class="w3-bar-item w3-button" onclick="toggleFunction()">SEARCH CHARACTER</a>
+    <a href="/compare" class="w3-bar-item w3-button" onclick="toggleFunction()">COMPARE CHARACTERS</a>
+    <a href="/test_your_knowledge" class="w3-bar-item w3-button" onclick="toggleFunction()">TEST YOUR KNOWLEDGE</a>
+    <a href="/" class="w3-bar-item w3-button" onclick="toggleFunction()">JOIN THE COMMUNITY</a>
+
+  </div>
+</div>
+
+<script>
+
+// Used to toggle the menu on small screens when clicking on the menu button
+function toggleFunction() {
+    var x = document.getElementById("navDemo");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else {
+        x.className = x.className.replace(" w3-show", "");
+    }
+}
+</script>
+    
+
+  </head>
+
+ <body>
+
+
+	<div>	
+		<h1>
+			Search for a Specific Character
+		</h1>
+
+	<div>
+
+		<div>
+			<h2>
+				Enter a valid character name and corresponding id:
+			</h2>
+
+			<form method="POST" action="/search/success_browser">
+				<label for="idLabel">
+				Character ID:
+				</label>
+				<input type="text" placeholder="1" id="idLabel" name=character_id>
+
+				<label for="nameLabel">
+				Character Name:
+				</label>
+				<input type="text" placeholder="Rick Sanchez" id="nameLabel" name=character_name>
+
+				<button type="submit">
+				Search
+				</button>
+					</form>
+				
+		</div>
+
+	</div>
+</div>
+
+  </body>
+
+
+
+
+</html>
