@@ -6,7 +6,7 @@
 
 ### https://www.rickandmortyapp.co.uk
 
-This Rick and Morty web application is a prototype of a Cloud application developed in Python and Flask where one can use GET, POST, PUT and DELETE methods to interact with the application. It functions as a fun, easy-to-use app which allows its users to access a character catalogue, search for and compare specific characters, test your knowledge of the Rick and Morty TV show and join a community of Rick and Morty fans. It is a REST-based service interface and makes use of an external REST service being the Rick and Morty API (https://rickandmortyapi.com/documentation/) in order to fill the character catalogue and extract the images for my "Test Your Knowledge" game within my applicaiton. The REST API responses conform to REST standards.
+This Rick and Morty web application is a prototype of a Cloud application developed in Python and Flask where one can use GET, POST, PUT and DELETE methods to interact with the application. It functions as a fun, easy-to-use app which allows its users to access a character catalogue, search for and compare specific characters, test their knowledge of the Rick and Morty TV show and join a community of Rick and Morty fans. It is a REST-based service interface and makes use of an external REST service being the Rick and Morty API (https://rickandmortyapi.com/documentation/) in order to fill the character catalogue and extract the images for my "Test Your Knowledge" game within my applicaiton. The REST API responses conform to REST standards.
 
 Additionally, it makes use of a Cloud database in Apache Cassandra, the free and open-source NoSQL database management system. This is where a table of the characters within the catalogue and the users who have joined the community are stored and managed. See details of set-up below.
 
@@ -19,7 +19,7 @@ Please use the requirements.txt file for all the packages and specific versions 
 **Accessing the Root URL**: 
 `@app.route('/', methods=['GET'])`
 
-Directs the user to the "Join the Community!" page which allows users to register the community. Alternatively they can continue to the web application. 
+Directs the user to the "Join the Community!" page which allows users to register to the community. Alternatively they can continue to the web application. 
 
 One can make a GET request through the browser with https://www.rickandmortyapp.co.uk or by using the curl command:
 
@@ -66,9 +66,9 @@ Connection: keep-alive
 **Deleting an existing user**:
 `@app.route('/delete_user', methods=['DELETE'])`
 
-Deletes an existing username and the hashed password from the Cassandra database rickandmortycharacters.users. Must specify the desired username and password for deletion.
+Deletes an existing username and the hashed password from the Cassandra database rickandmortycharacters.users. The desired username and password for deletion must be specified.
 
-One can make a DELETE request by using he curl command:
+One can make a DELETE request by using the curl command:
 
 ```
 curl -i -H "Content-Type: application/json" -X DELETE -d '{"username":"example@email.com"}' https://www.rickandmortyapp.co.uk/delete_user
@@ -88,7 +88,7 @@ Connection: keep-alive
 **Accessing the home page**:
 `@app.route('/home', methods=['GET'])`
 
-Directs users to the home page with welcome message for users of this web application. Also acts as an index directing users to various services in the app.
+Directs users to the home page with a welcome message for users of this web application. Also acts as an index directing users to various services in the app.
 
 One can make a GET request through the browser with https://www.rickandmortyapp.co.uk/home or by using the curl command:
 
@@ -136,7 +136,7 @@ Connection: keep-alive
 
 Gets the stats of all the characters in the catalogue filled by the external API database.
 
-One can make request through the curl command:
+One can make a request through the curl command:
 
 ```
 curl -i -H "Content-Type: application/json" -X GET https://www.rickandmortyapp.co.uk/character_catalogue
@@ -153,7 +153,7 @@ Content-Length: 77830
 Connection: keep-alive
 ```
 
-**Searching for specific character in catalogue**:
+**Searching for a specific character in the catalogue**:
 `@app.route('/search', methods=['GET'])`
 `@app.route('/search/success_browser', methods=['GET', 'POST'])`
 `@app.route('/search/success_curl', methods=['GET'])`
@@ -175,12 +175,12 @@ Content-Length: 154
 Connection: keep-alive
 ```
 
-**Comparing stats of two specified characters in catalogue**:
+**Comparing the stats of two specified characters in catalogue**:
 `@app.route('/compare', methods=['GET'])`
 `@app.route('/compare/success_browser', methods=['GET', 'POST'])`
 `@app.route('/compare/success_curl', methods=['GET', 'POST'])`
 
-Compares the stats two specified characters in the catalogue. Must specify both the characters IDs and names. 
+Compares the stats of two specified characters in the catalogue. Both the desired characters ID's and name's must be specified. 
 
 One can make a GET request to the https://www.rickandmortyapp.co.uk/compare and fill in the form to execute the app route `/compare/success_browser`. Or one can use the curl command:
 
@@ -202,7 +202,7 @@ Connection: keep-alive
 **Testing your knowledge of the Rick and Morty show**:
 `@app.route('/test_your_knowledge', methods=['GET'])`
 
-Generates the image of randomly a selected character from the catalogue and then gives you the option to reveal the stats by utilising the external Rick and Morty API (https://rickandmortyapi.com/documentation/).
+Generates the image of a randomly selected character from the catalogue and then gives the option to reveal the stats by utilising the external Rick and Morty API (https://rickandmortyapi.com/documentation/).
 
 One can make a GET request to the https://www.rickandmortyapp.co.uk/test_your_knowledge and click the "Generate" button and then click the "REVEAL STATS!" button. Or one can use the curl command:
 
@@ -226,9 +226,9 @@ Connection: keep-alive
 **Adding new characters to the catalogue**:
 `@app.route('/character', methods=['POST'])`
 
-Posts a new character to the catalogue. Must specify the character ID and name.
+Posts a new character to the catalogue. The desired character ID and name must be specified.
 
-One can make a POST request by using he curl command:
+One can make a POST request by using the curl command:
 
 ```
 curl -i -H "Content-Type: application/json" -X POST -d '{"id":494, "name":"Dummy Character"}' https://www.rickandmortyapp.co.uk/character
@@ -245,12 +245,12 @@ Content-Length: 54
 Connection: keep-alive
 ```
 
-**Modifying a characters gender**:
+**Modifying a character's gender**:
 `@app.route('/character/update_gender', methods=['PUT'])`
 
-Updates the gender of an existing character. Must specify the character ID and name along with the gender you would like to modify it to.
+Updates the gender of an existing character. The desired character ID and name along with the gender you would like to modify it to must be specified.
 
-One can make a PUT request by using he curl command:
+One can make a PUT request by using the curl command:
 
 ```
 curl -i -H "Content-Type: application/json" -X PUT -d '{"id":494, "name":"Dummy Character", "gender":"Male"}' https://www.rickandmortyapp.co.uk/character/update_gender
@@ -269,12 +269,12 @@ Content-Length: 53
 Connection: keep-alive
 ```
 
-**Modifying a characters species**:
+**Modifying a character's species**:
 `@app.route('/character/update_species', methods=['PUT'])`
 
-Updates the species of an existing character. Must specify the character ID and name along with the species you would like to modify it to.
+Updates the species of an existing character. The desired character ID and name along with the species you would like to modify it to must be specified.
 
-One can make a PUT request by using he curl command:
+One can make a PUT request by using the curl command:
 
 ```
 curl -i -H "Content-Type: application/json" -X PUT -d '{"id":494, "name":"Dummy Character", "species":"Human"}' https://www.rickandmortyapp.co.uk/character/update_species
@@ -293,12 +293,12 @@ Content-Length: 53
 Connection: keep-alive
 ```
 
-**Modifying a characters status**:
+**Modifying a character's status**:
 `@app.route('/character/update_status', methods=['PUT'])`
 
-Updates the status of an existing character. Must specify the character ID and name along with the status you would like to modify it to.
+Updates the status of an existing character. The desired character ID and name along with the status you would like to modify it to must be specified.
 
-One can make a PUT request by using he curl command:
+One can make a PUT request by using the curl command:
 
 ```
 curl -i -H "Content-Type: application/json" -X PUT -d '{"id":494, "name":"Dummy Character", "status":"Alive"}' https://www.rickandmortyapp.co.uk/character/update_status
@@ -320,9 +320,9 @@ Connection: keep-alive
 **Deleting existing characters from the catalogue**:
 `@app.route('/character', methods=['DELETE'])`
 
-Deletes the character the user wishes to delete from the catalogue. Must enter both ID and name of desired character.
+Deletes the character the user wishes to delete from the catalogue. The desired character ID and name must be specified.
 
-One can make a DELETE request by using he curl command:
+One can make a DELETE request by using the curl command:
 
 ```
 curl -i -H "Content-Type: application/json" -X DELETE -d '{"id":494, "name":"Dummy Character"}' https://www.rickandmortyapp.co.uk/character
@@ -355,7 +355,7 @@ Run a Cassandra instance within docker:
 sudo docker run --name cassandra-miniproject -p 9042:9042 -d cassandra:latest
 ```
 
-We can now interact with our Cassandra via its native command line shell client called ‘cqlsh’ using CQL:
+Interact with Cassandra via its native command line shell client called ‘cqlsh’ using CQL:
 
 ```
   sudo docker exec -it cassandra-miniproject cqlsh
@@ -388,19 +388,19 @@ curl -i -H "Content-Type: application/json" -X POST https://www.rickandmortyapp.
 
 ## Implementing hash-based authentication
 
-In the MiniProjectApp.py file, I import the library Werkzeug:
+In the MiniProjectApp.py file, import the library Werkzeug:
 
 ```python
 from werkzeug.security import generate_password_hash
 ```
 
-You can use the `generate_password_hash` function to hash the password which a user has posted to `rickandmortycharacters.users` using the SHA-256 which generates an almost-unique 256-bit (32-byte) signature:
+One can use the `generate_password_hash` function to hash the password which a user has posted to `rickandmortycharacters.users` using the SHA-256 which generates an almost-unique 256-bit (32-byte) signature:
 
 ```python
 password = generate_password_hash(request.form['password'], method='sha256')
 ```
 
-We can check what the hashed password looks like in our Cassandra instance in the table `rickandmortycharacters.users`:
+Check what the hashed password looks like in the Cassandra instance in the table `rickandmortycharacters.users`:
 
 ```CQL
 SELECT password FROM rickandmortycharacters.users WHERE username='example@email.com';
@@ -416,7 +416,7 @@ SELECT password FROM rickandmortycharacters.users WHERE username='example@email.
 
 ### Nginx and Gunicorn
 
-First we want to install Nginx as our web server in order to enable HTTPS, along with Gunicorn in order to handle the Python code:
+First, install Nginx as the web server in order to enable HTTPS, along with Gunicorn in order to handle the Python code:
 
 ```
 sudo apt install nginx
@@ -447,7 +447,7 @@ server {
         }
 ```
 
-Activate Firewall and enable it on system startup, restart our Nginx server and run Gunicorn with number of workers equal to 5 [in the Gunicorn documentation it recommends (2 x $num_cores) + 1 as the number of workers to start off with - run command `nproc --all` to check number of cores]:
+Activate Firewall and enable it on system startup, restart the Nginx server and run Gunicorn with number of workers equal to 5 [in the Gunicorn documentation it recommends (2 x $num_cores) + 1 as the number of workers to start off with. Run the command `nproc --all` to check number of cores]:
 
 ```
 sudo ufw enable
@@ -457,7 +457,7 @@ gunicorn -w 5 MiniProjectApp:app
 
 ### HTTPS Certificate
 
-Now we can start to secure our web server and enable HTTPS on the web application by obtaining a free certificate using the Certificate Authority https://letsencrypt.org and the software tool with shell access https://certbot.eff.org/. These are the instructions for a HTTP website running Nginx on Ubuntu 16.04.
+Now start to secure the web server and enable HTTPS on the web application by obtaining a free certificate using the Certificate Authority https://letsencrypt.org and the software tool with shell access https://certbot.eff.org/. These are the instructions for a HTTP website running Nginx on Ubuntu 16.04.
 
 Add the Certbot PPA to your list of repositories:
 
@@ -475,7 +475,7 @@ Install Certbot:
 sudo apt-get install certbot python-certbot-nginx
 ```
 
-Get a certificate and have Certbot edit your Nginx configuration automatically to serve it, turning on HTTPS access:
+Get a certificate and have Certbot edit your Nginx configuration automatically, turning on HTTPS access:
 
 ```
 sudo certbot --nginx
