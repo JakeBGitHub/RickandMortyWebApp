@@ -6,7 +6,7 @@
 
 ### https://www.rickandmortyapp.co.uk
 
-This Rick and Morty web application is a prototype of a Cloud application developed in Python and Flask where one can use GET, POST, PUT and DELETE methods to interact with the application. It functions as a fun, easy-to-use app which allows its users to access a character catalogue, search for and compare specific characters, test their knowledge of the Rick and Morty TV show and join a community of Rick and Morty fans. It is a REST-based service interface and makes use of an external REST service being the Rick and Morty API (https://rickandmortyapi.com/documentation/) in order to fill the character catalogue and extract the images for my "Test Your Knowledge" game within my applicaiton. The REST API responses conform to REST standards.
+This Rick and Morty web application is a prototype of a Cloud application developed in Python and Flask where one can use GET, POST, PUT and DELETE methods to interact with the application. It functions as a fun, easy-to-use app which allows its users to access a character catalogue, search for and compare specific characters, test their knowledge of the Rick and Morty TV show and join a community of Rick and Morty fans. It is a REST-based service interface and makes use of an external REST service being the Rick and Morty API (https://rickandmortyapi.com/documentation/) in order to fill the character catalogue and extract the images for the "Test Your Knowledge" game within the applicaiton. The REST API responses conform to REST standards.
 
 Additionally, it makes use of a Cloud database in Apache Cassandra, the free and open-source NoSQL database management system. This is where a table of the characters within the catalogue and the users who have joined the community are stored and managed. See details of set-up below.
 
@@ -158,7 +158,7 @@ Connection: keep-alive
 `@app.route('/search/success_browser', methods=['GET', 'POST'])`
 `@app.route('/search/success_curl', methods=['GET'])`
 
-Searches for a specified character in the catalogue. Must specify both the character ID and name. One can make a GET request to the https://www.rickandmortyapp.co.uk/search and fill in the form to execute the app route `/search/success_browser`. Or one can use the curl command:
+Searches for a specified character in the catalogue. The character ID and name must be specified. One can make a GET request to the https://www.rickandmortyapp.co.uk/search and fill in the form to execute the app route `/search/success_browser`. Or one can use the curl command:
 
 ```
 curl -i -H "Content-Type: application/json" -X GET -d '{"id":1, "name":"Rick Sanchez"}' https://www.rickandmortyapp.co.uk/search/success_curl
