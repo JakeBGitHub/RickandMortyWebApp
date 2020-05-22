@@ -1,8 +1,4 @@
-# ECS781P - CLOUD COMPUTING: Mini Project
-
-## Student Name: Jake Barrett	Student ID: 190722595
-
-## Rick and Morty Web Application: 
+# Rick and Morty Web Application: 
 
 ### https://www.rickandmortyapp.co.uk
 
