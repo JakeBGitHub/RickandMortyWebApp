@@ -1,6 +1,6 @@
 # Rick and Morty Web Application: 
 
-### https://www.rickandmortyapp.co.uk
+### https://www.rickandmortyapp.co.uk (not running currently)
 
 This Rick and Morty web application is a prototype of a Cloud application developed in Python and Flask where one can use GET, POST, PUT and DELETE methods to interact with the application. It functions as a fun, easy-to-use app which allows its users to access a character catalogue, search for and compare specific characters, test their knowledge of the Rick and Morty TV show and join a community of Rick and Morty fans. It is a REST-based service interface and makes use of an external REST service being the Rick and Morty API (https://rickandmortyapi.com/documentation/) in order to fill the character catalogue and extract the images for the "Test Your Knowledge" game within the applicaiton. The REST API responses conform to REST standards.
 
